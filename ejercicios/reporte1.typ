@@ -26,7 +26,7 @@ python3 cutzamalaSystem/getDataFromSIH.py
 
 == b) Genera una gráfica del almacenamiento absoluto para cada presa en ese periodo.
 
-El procesamiento de los datos se realizó con Python, y se limitaron al periodo entre **2018 y 2022** para el análisis.
+El procesamiento de los datos se realizó con Python, y se limitaron al periodo entre *2018 y 2022* para el análisis.
 
 #figure(
 image("../cutzamalaSystem/figs/VVCMX_almacenamiento_2018_2022.png", width: 80%),
@@ -73,3 +73,4 @@ Se observan tendencias similares entre las tres presas, lo que sugiere una opera
 
 Estas fluctuaciones reflejan la dependencia del sistema en periodos de captación y muestran vulnerabilidades ante eventos prolongados de baja precipitación.
 
+#pagebreak()

@@ -6,7 +6,7 @@ Este repositorio contiene soluciones a cinco ejercicios que abordan problemátic
 
 - `cutzamalaSystem/`: Análisis del almacenamiento en el Sistema Cutzamala (2020–2024).
 - `parkBudget/`: Distribución presupuestal propuesta para parques en la CDMX.
-- `cdmx/`: Determinación del centro geográfico de México según distintos criterios.
+- `center/`: Determinación del centro geográfico de México según distintos criterios.
 - `curp/`: Limpieza, validación y análisis estadístico de CURPs.
 - `profeco/`: Revisión crítica del Informe Anual PROFECO 2005.
 
@@ -24,6 +24,8 @@ pip install -r requirements.txt
 python3 curp/curp_analysis.py --typst
 # grafica el almacenamiento(por ejemplo)
 python3 cutzamalaSystem/plot_cutzamala.py -i 2020 -f 2024 -s
+# Solo la primera vez: descarga y extrae el shapefile de Natural Earth
+python3 center/generaMapa.py --first-run
 
 # Compila el reporte
 typst compile reporte.typ reporte.pdf
@@ -79,6 +81,48 @@ A continuación se muestran las gráficas generadas automáticamente para el per
 | <img src="assets/VVCMX_almacenamiento_2018_2022.png" width="220"/> | <img src="assets/VBRMX_almacenamiento_2018_2022.png" width="220"/> | <img src="assets/EBLSI_almacenamiento_2018_2022.png" width="220"/> |
 
 </div>
+
+Aquí tienes la sección correspondiente al **Ejercicio 3: Centro de México**, con el mismo estilo y nivel de detalle que tus otros ejercicios:
+
+---
+
+## Ejercicio 3: Centro de México
+
+![Mapa generado de ubicaciones](assets/centro-mexico-mapa.png)
+
+Se identifican y comparan tres localidades que afirman ser el centro de la República Mexicana: **Cañitas de Felipe Pescador** (Zacatecas), **Tequisquiapan** (Querétaro) y **Aguascalientes** (Aguascalientes). El análisis considera tres enfoques distintos: geográfico, simbólico e institucional.
+
+* Se utiliza un script en Python que descarga y extrae automáticamente un shapefile del contorno mundial (Natural Earth), lo filtra por México y marca los tres puntos de interés.
+* El mapa resultante se genera y guarda como imagen PNG en la carpeta `assets/`.
+* Puede mostrarse en pantalla usando una opción adicional en la línea de comandos (`-s` / `--show`).
+
+### Código relevante
+
+Ubicado en `center/generaMapa.py`. Uso recomendado:
+
+```bash
+# Solo la primera vez: descarga y extrae el shapefile de Natural Earth
+python3 center/generaMapa.py --first-run
+
+# Generar el mapa y mostrarlo
+python3 center/generaMapa.py --show
+```
+
+Este script acepta:
+
+* `--first-run`: Descarga y prepara el shapefile necesario para mapear México.
+* `-s` / `--show`: Muestra el mapa en pantalla además de guardarlo.
+* (sin argumentos): Genera el archivo PNG en silencio como salida final.
+
+### Visualización del resultado
+
+El mapa generado incluye:
+
+* **Tequisquiapan** (centro oficial designado en 1916).
+* **Cañitas de Felipe Pescador** (centro geográfico según INEGI).
+* **Aguascalientes** (centro simbólico señalado en la Exedra de la Plaza de la Patria).
+
+La figura se inserta automáticamente en el reporte final de Typst para ilustrar la comparación espacial entre las distintas interpretaciones del “centro” de México.
 
 ## Ejercicio 4: Análisis de CURPs
 

@@ -64,3 +64,4 @@ implementación de un sistema automatizado que realice las siguientes acciones:
   distribución de CURPs por entidad federativa y detectar patrones inusuales.
 - *Reporte automatizado*: Generar informes automáticos en pdf mediante typst.
 
+#pagebreak()
