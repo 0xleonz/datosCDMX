@@ -20,14 +20,14 @@ build_pdf:
     paths:
       - reporte.pdf
 
-release_pdf:
+release:
   stage: release
-  # Se ejecuta con tags gps --tag
   only:
     - tags
   needs:
     - job: build_pdf
       artifacts: true
+  script: echo "Creating release..."  # Obligatorio aunque no se use
   release:
     name: "Release ${CI_COMMIT_TAG}"
     tag_name: "${CI_COMMIT_TAG}"
