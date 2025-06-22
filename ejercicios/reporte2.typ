@@ -12,7 +12,7 @@ Se tiene un fondo destinado al presupuesto para parques de la Ciudad de México 
 
 == a) ¿Qué factores tomarías en cuenta para la distribución porcentual de este fondo entre las 16 alcaldías?
 
-Algunos de los factores a considerar para la distribución del presupuesto entre las alcaldías podrían incluir:
+Algunos de los factores a considerar para la distribución del presupuesto entre las alcaldías podrían incluir@verdeGood:
 - Superficie de áreas verdes existentes y su estado de conservación.
 - Necesidades identificadas en planes de desarrollo urbano o solicitudes ciudadanas.
 - Índices de marginación o rezago social.
@@ -22,7 +22,7 @@ Algunos de los factores a considerar para la distribución del presupuesto entre
 - Disponibilidad de terreno público para nuevos proyectos.
 
 == b) Determina el porcentaje que asignarías a cada alcaldía.
-Para esto vamos a considerar solamente que la asignación se basa en la población de cada alcaldía, y los metros de área verde por habitante. Un analisis mas detallado incluiría los factores mencionados en a) y alguna funcion de valuacion. Usando datos disponibles. Y considerando lo siguiente.// citas
+Para esto vamos a considerar solamente que la asignación se basa en la población de cada alcaldía, y los metros de área verde por habitante. Un analisis mas detallado incluiría los factores mencionados en a) y alguna funcion de valuacion. Usando datos disponibles. Y considerando lo siguiente @densidad @sedema @omsReco.// citas
 ```python
 import pandas as pd
 
@@ -39,7 +39,7 @@ datos = {
                           15.4, 2.2, 8.4, 9.6, 13.6, 5.0]
 }
 df = pd.DataFrame(datos)
-# Estándar recomendado por la OMS
+# Estándar atribuido falsamente a la OMS
 estandar = 9.0
 # Factor de ajuste
 df["factor"] = ((estandar - df["Área_verde_m2hab"]) / estandar).clip(lower=-0.9)
@@ -81,7 +81,7 @@ El presupuesto que asignaria a cada delegacion es:
 
 == c) ¿Cómo tomarías en cuenta el ejercicio del presupuesto de este fondo por parte de cada alcaldía en años pasados para la asignación de los siguientes años?
 
-Para asignaciones futuras, consideraría:
+Para asignaciones futuras, consideraría @verdeGood:
 
 - Reportes de transparencia y auditorías públicas.
 - Participación ciudadana y quejas recibidas.

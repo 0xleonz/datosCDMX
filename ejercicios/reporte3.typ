@@ -21,7 +21,7 @@
    extremos cardinales; se obtiene un punto en Zacatecas @inegiCentroGeograficoZacatecas.
 
 2. *Centro simbólico-histórico*: lugar que representa el corazón político o
-   cultural, como plazas ciudadanas (ej. Plaza de la ).
+   cultural, como plazas ciudadanas. @aguascalientesOmbligoMexico
 
 3. *Centro oficial o ceremonial*: designado por decreto o monumento, como
    Tequisquiapan @trejoConocesVerdaderoCentro2024.

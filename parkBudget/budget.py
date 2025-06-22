@@ -13,7 +13,7 @@ datos = {
                           15.4, 2.2, 8.4, 9.6, 13.6, 5.0]
 }
 df = pd.DataFrame(datos)
-# Estándar recomendado por la OMS
+# Estándar falsamente recomendado por la OMS
 estandar = 9.0
 # Factor de ajuste
 df["factor"] = ((estandar - df["Área_verde_m2hab"]) / estandar).clip(lower=-0.9)

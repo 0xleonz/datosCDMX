@@ -6,7 +6,7 @@
 #codly(languages: codly-languages)
 = Ejercicio 4. CURP
 
-Se analizó el archivo `curp_sucio.txt`, que contiene múltiples registros de CURP, para identificar aquellos que cumplen con la estructura oficial definida por la RENAPO.
+Se analizó el archivo `curp_sucio.txt`, que contiene múltiples registros de CURP, para identificar aquellos que cumplen con la estructura oficial definida por la RENAPO @renapo.
 
 == a) CURPs válidas
 

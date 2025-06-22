@@ -1,0 +1,97 @@
+gobernacionClaveUnicaRegistro:
+  type: web
+  title: "Clave Única de Registro de Población: CURP"
+  author: ["Gobernación, Secretaría de"]
+  issued: 2025-06-21
+  url: "http://www.gob.mx/segob/acciones-y-programas/clave-unica-de-registro-de-poblacion-curp"
+  container-title: "gob.mx"
+
+trejoConocesVerdaderoCentro2024:
+  type: web
+  title: "¿Conoces el verdadero centro de México? Tequisquiapan te sorprenderá con su historia"
+  author: ["Trejo, Yeseline"]
+  issued: 2024-12
+  url: "https://mexico.as.com/actualidad/conoces-el-verdadero-centro-de-mexico-tequisquiapan-te-sorprendera-con-su-historia-n/"
+  container-title: "Diario AS"
+
+inegiCentroGeograficoZacatecas:
+  type: web
+  title: "INEGI determina el centro geográfico de México"
+  author: ["Redacción Milenio"]
+  issued: 2018-04
+  url: "https://www.milenio.com/estados/inegi-determina-el-centro-geografico-de-mexico"
+  container-title: "Milenio"
+
+aguascalientesOmbligoMexico:
+  type: web
+  title: "Aguascalientes, el ombligo de México"
+  author: ["González, Mayela"]
+  issued: 2017-02
+  url: "https://www.elsoldelcentro.com.mx/local/aguascalientes-el-ombligo-de-mexico-118528.html"
+  container-title: "El Sol del Centro"
+
+sina:
+  type: web
+  title: "Comisión Nacional del Agua"
+  author: ["Wikipedia contributors"]
+  issued: "2025-06-22"
+  accessed: "2025-06-22"
+  url: "https://es.wikipedia.org/wiki/Comisión_Nacional_del_Agua"
+  container-title: "Wikipedia"
+
+dataset:
+  type: web
+  title: "Datos Históricos de Presas en México (Conagua)"
+  author: ["De Hoyos, Eugenio"]
+  issued: "2022-06-01"    # Fecha aproximada de la última actualización (junio 2022)
+  accessed: "2025-06-22"
+  url: "https://www.kaggle.com/datasets/edehoyos/conagua-presas"
+  container-title: "Kaggle"
+
+verdeGood:
+  type: Article
+  title: "Creating Green Space Sustainability through Low-Budget and Upcycling Strategies"
+  author: ["Herman, K.", "Sbarcea, M.", "Panagopoulos, T."]
+  issued: "2018-06"
+  container-title: "Sustainability"
+  volume: "10"
+  issue: "6"
+  page: "1857"
+  doi: "10.3390/su10061857"
+  url: "https://doi.org/10.3390/su10061857"
+
+densidad:
+  type: web
+  title: "Demarcaciones territoriales de la Ciudad de México"
+  author: ["Wikipedia contributors"]
+  issued: "2025-06-22"
+  accessed: "2025-06-22"
+  url: "https://es.wikipedia.org/wiki/Demarcaciones_territoriales_de_la_Ciudad_de_M%C3%A9xico"
+  container-title: "Wikipedia"
+
+sedema:
+  type: web
+  title: "Inventario de Áreas Verdes"
+  author: ["Secretaría del Medio Ambiente de la Ciudad de México"]
+  issued: "2025-06-22"
+  accessed: "2025-06-22"
+  url: "https://sedema.cdmx.gob.mx/programas/programa/inventario-de-areas-verdes"
+  container-title: "Sedema CDMX"
+
+omsReco:
+  type: web
+  title: "¿Qué superficie verde debe tener una ciudad? (1) Las clásicas recomendaciones atribuidas a la OMS son falsas"
+  author: ["Yus Ramos, Rafael"]
+  issued: "2024-09-20"
+  accessed: "2025-06-22"
+  url: "https://revistaelobservador.com/opinion/40-el-buen-ciudadano/19971-que-superficie-verde-debe-tener-una-ciudad-1-las-clasicas-recomendaciones-atribuidas-a-la-oms-son-falsas"
+  container-title: "Revista El Observador"
+
+renapo:
+  type: web
+  title: "¿Sabes cómo se conforma tu CURP?"
+  author: ["Registro Nacional de Población"]
+  issued: "2018-02-07"
+  accessed: "2025-06-22"
+  url: "https://www.gob.mx/renapo/articulos/sabes-como-se-conforma-tu-curp"
+  container-title: "Gob.mx"

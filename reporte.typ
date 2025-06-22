@@ -9,7 +9,7 @@
   set align(left)
   it
 }
-
+#show link: underline
 
 
 // Contents
