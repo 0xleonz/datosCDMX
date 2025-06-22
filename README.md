@@ -8,7 +8,6 @@ Este repositorio contiene soluciones a cinco ejercicios que abordan problemátic
 - `parkBudget/`: Distribución presupuestal propuesta para parques en la CDMX.
 - `center/`: Determinación del centro geográfico de México según distintos criterios.
 - `curp/`: Limpieza, validación y análisis estadístico de CURPs.
-- `profeco/`: Revisión crítica del Informe Anual PROFECO 2005.
 
 ## Reporte
 
