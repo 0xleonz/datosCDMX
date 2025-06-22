@@ -1,0 +1,6 @@
+venv
+datos.typ
+/curp/fig_entidades.png
+references.yml
+**/**.test */
+target

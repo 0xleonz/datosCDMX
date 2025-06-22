@@ -1,0 +1,38 @@
+
+#import "../curp/datos.typ": *
+#import "@preview/codly:1.3.0": *
+#import "@preview/codly-languages:0.1.1": *
+#show: codly-init.with()
+
+#codly(languages: codly-languages)
+= Ejercicio 3. Centro de México
+
+== a) Tres lugares que se autodenominan el centro de México
+
+- *Tequisquiapan, Querétaro*: En este Pueblo Mágico existe un monumento inaugurado en 1916 por Venustiano Carranza, denominado “Centro Geográfico de la República Mexicana”.
+- *Cañitas de Felipe Pescador, Zacatecas*: Según el INEGI, al promediar los extremos geográficos del país, el centro cae cerca de esta localidad.
+- *Aguascalientes, Aguascalientes*: En la Plaza de la Patria se colocó una placa que marcaba este punto como el “ombligo de México”, junto con una Exedra que simboliza el centro geográfico.
+
+== b) Tres criterios para definir el “centro” del país
+
+1. *Centro geográfico (promedio de extremos)*: Cálculo matemático a partir del promedio de las coordenadas más al norte, sur, este y oeste. Da como resultado una ubicación cerca de Zacatecas.
+2. *Centro simbólico-histórico*: Ubicación que representa el centro político, histórico o cultural del país. Ejemplo: el Zócalo capitalino.
+3. *Centro oficial o ceremonial*: Ubicación designada oficialmente mediante decreto o monumento, como el que se encuentra en Tequisquiapan.
+
+== c) Orden de los lugares según cada criterio
+
+|= Lugar                          |= Criterio 1: Geográfico |= Criterio 2: Simbólico |= Criterio 3: Oficial |
+| Cañitas de Felipe Pescador, Zac. | ✅                       | ⚠️                       | ❌                    |
+| Tequisquiapan, Querétaro         | ❌                       | ❌                       | ✅                    |
+| Aguascalientes, Ags.             | ⚠️                       | ❌                       | ⚠️                    |
+
+== d) Mapa con ubicaciones céntricas
+
+Los tres puntos están indicados en el mapa incluido:
+
+- 📍 *Cañitas de Felipe Pescador, Zacatecas* — Centro geográfico según INEGI.
+- 📍 *Tequisquiapan, Querétaro* — Centro oficial según decreto de 1916.
+- 📍 *Aguascalientes, Ags.* — Centro simbólico representado en la Exedra.
+
+// #figure(image("centro-mexico-mapa.png"), caption: "Ubicaciones del centro de México según distintos criterios.")
+
