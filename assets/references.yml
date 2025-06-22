@@ -95,3 +95,46 @@ renapo:
   accessed: "2025-06-22"
   url: "https://www.gob.mx/renapo/articulos/sabes-como-se-conforma-tu-curp"
   container-title: "Gob.mx"
+
+5wikiProfeco:
+  type: web
+  title: "Procuraduría Federal del Consumidor"
+  author: ["Wikipedia contributors"]
+  issued: "2025-06-22"
+  accessed: "2025-06-22"
+  url: "https://es.wikipedia.org/wiki/Procuradur%C3%ADa_Federal_del_Consumidor"
+  container-title: "Wikipedia"
+
+5wikiEconHist:
+  type: web
+  title: "Economic history of Mexico"
+  author: ["Wikipedia contributors"]
+  issued: "2025-06-22"
+  accessed: "2025-06-22"
+  url: "https://en.wikipedia.org/wiki/Economic_history_of_Mexico"
+  container-title: "Wikipedia"
+
+5wikiOilBoom:
+  type: web
+  title: "Mexican oil boom"
+  author: ["Wikipedia contributors"]
+  issued: "2025-06-22"
+  accessed: "2025-06-22"
+  url: "https://en.wikipedia.org/wiki/Mexican_oil_boom"
+  container-title: "Wikipedia"
+
+5nberReport:
+  type: report
+  title: "Mexico’s Public Debt Crisis: 1976–1982"
+  author: ["Autor desconocido"]
+  issued: "1983-01"
+  accessed: "2025-06-22"
+  url: "https://www.nber.org/system/files/chapters/c8302/c8302.pdf"
+
+5profecoAnnual2005:
+  type: report
+  title: "Informe Anual 2005"
+  author: ["Procuraduría Federal del Consumidor"]
+  issued: "2005-12"
+  accessed: "2025-06-22"
+  url: "https://bibliotecadelconsumidor.profeco.gob.mx/media/libros/Informe%20anual.%20Profeco.pdf"

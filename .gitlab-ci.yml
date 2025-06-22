@@ -2,39 +2,26 @@ image: 123marvin123/typst:0.3.0
 
 stages:
   - build
-  - release
+  - deploy
 
-variables:
-  # Evita problemas de caching de repositorio ? Todavia es tuvil ????
-  GIT_SUBMODULE_STRATEGY: recursive
+compile_typst:
+    stage: build
+    script:
+        - typst -v compile report.typ
+    artifacts:
+        when: always
+        paths:
+            - ./*.pdf # send to a mail or as a release ????!?!
 
-build_pdf:
-  stage: build
-  script:
-    # Compila reporte.typ -> reporte.pdf
-    - typst compile reporte.typ reporte.pdf
-  artifacts:
-    name: "reporte-${CI_COMMIT_SHORT_SHA}"
-    when: always
-    expire_in: 1 week
-    paths:
-      - reporte.pdf
-
-release:
-  stage: release
-  only:
-    - tags
-  needs:
-    - job: build_pdf
-      artifacts: true
-  script: echo "Creating release..."  # Obligatorio aunque no se use
-  release:
-    name: "Release ${CI_COMMIT_TAG}"
-    tag_name: "${CI_COMMIT_TAG}"
-    description: |
-      Versión automática generada por CI/CD.
-      - PDF: reporte.pdf
-    assets:
-      links:
-        - name: "Descargar reporte.pdf"
-          url: "${CI_PROJECT_URL}/-/jobs/${CI_JOB_ID}/artifacts/raw/reporte.pdf"
+pages:
+    stage: deploy
+    script:
+        - mkdir .public
+        - cp -r ./* .public
+        - rm -rf public
+        - mv .public public
+    artifacts:
+        paths:
+        - public
+    rules:
+        - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH

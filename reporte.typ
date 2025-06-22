@@ -27,10 +27,13 @@
 
 #set heading(numbering: "1.")
 #outline(title: "Índice")
+#pagebreak()
+
 #include "ejercicios/reporte1.typ"
 #include "ejercicios/reporte2.typ"
 #include "ejercicios/reporte3.typ"
 #include "ejercicios/reporte4.typ"
+#include "ejercicios/reporte5.typ"
 
 #pagebreak()
 #bibliography("assets/references.yml", title: "Referencias")
