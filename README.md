@@ -1,152 +1,187 @@
-# Ejercicios
+# DatosCDMX
 
-Este repositorio contiene soluciones a cinco ejercicios que abordan problemáticas ambientales, sociales y administrativas en México, con un enfoque en el uso de datos, validación estructural y análisis geoespacial.
+This repository contains various data analyses addressing environmental, social, and administrative issues in Mexico, focusing on data-driven validation, structural consistency, and geospatial analysis.
 
-## Estructura
+## Structure
 
-- `cutzamalaSystem/`: Análisis del almacenamiento en el Sistema Cutzamala (2020–2024).
-- `parkBudget/`: Distribución presupuestal propuesta para parques en la CDMX.
-- `center/`: Determinación del centro geográfico de México según distintos criterios.
-- `curp/`: Limpieza, validación y análisis estadístico de CURPs.
-
-## Reporte
-
-El reporte principal se encuentra en formato Typst (`reporte.typ`). Contiene texto, gráficas y código embebido con soporte para resaltado gracias a [`codly`](https://typst.app/universe/package/codly/). Para compilarlo necesitas tener [Typst](https://typst.app/) instalado.
-
-### Compilación
-
-```bash
-# Instala dependencias de Python
-pip install -r requirements.txt
-
-# Genera datos para Typst (por ejemplo, para el ejercicio de CURP)
-python3 curp/curp_analysis.py --typst
-# grafica el almacenamiento(por ejemplo)
-python3 cutzamalaSystem/plot_cutzamala.py -i 2020 -f 2024 -s
-# Solo la primera vez: descarga y extrae el shapefile de Natural Earth
-python3 center/generaMapa.py --first-run
-
-# Compila el reporte
-typst compile reporte.typ reporte.pdf
-````
-
-## Ejercicio 1: Sistema Cutzamala
-
-![Gráfica comparativa porcentual](assets/comparativo_porcentajes_2018_2022.png)
-
-Se analiza el almacenamiento absoluto (en millones de m³) y el porcentaje de llenado de las tres principales presas del Sistema Cutzamala: **El Bosque**, **Valle de Bravo** y **Villa Victoria**, utilizando datos históricos entre 2020 y 2024.
-
-* Se utiliza un script en Python que descarga y procesa los datos directamente desde el FTP de CONAGUA.
-* Se generan cuatro gráficas:
-
-  * Tres gráficas individuales de almacenamiento por presa.
-  * Una gráfica comparativa del porcentaje de llenado de las tres.
-* Las figuras se guardan automáticamente en las carpetas `assets/` y `cutzamalaSystem/figs/`.
-* También puede mostrarse cada gráfica en pantalla con la opción `-s`.
-
-### Código relevante
-
-Ubicado en `cutzamalaSystem/`. Uso recomendado:
-
-```bash
-# Obtener los datos desde el FTP de CONAGUA
-python3 cutzamalaSystem/getDataFromSIH.py
-
-# Generar gráficas para un rango específico
-python3 cutzamalaSystem/plot_cutzamala.py -i 2020 -f 2024 -s
-```
-
-Este script acepta:
-
-* `-i` / `--inicio`: Año inicial (ej. 2020)
-* `-f` / `--fin`: Año final (ej. 2024)
-* `-s` / `--show`: Muestra cada gráfica además de guardarla
-
-> Si no se proporcionan años, el script utiliza automáticamente los últimos cuatro años disponibles en el archivo.
-
-### 📊 Visualización de resultados
-
-A continuación se muestran las gráficas generadas automáticamente para el periodo 2018–2022:
-
-<div align="center">
-
-#### Porcentaje de llenado (comparativa)
-<img src="assets/comparativo_porcentajes_2018_2022.png" width="700"/>
-
-#### Almacenamiento absoluto por presa
-
-| Villa Victoria | Valle de Bravo | El Bosque |
-|:--------------:|:--------------:|:---------:|
-| <img src="assets/VVCMX_almacenamiento_2018_2022.png" width="220"/> | <img src="assets/VBRMX_almacenamiento_2018_2022.png" width="220"/> | <img src="assets/EBLSI_almacenamiento_2018_2022.png" width="220"/> |
-
-</div>
-
-Aquí tienes la sección correspondiente al **Ejercicio 3: Centro de México**, con el mismo estilo y nivel de detalle que tus otros ejercicios:
+* `airbnbPrices/`: Data analysis of Airbnb listing prices in Mexico City, covering exploratory analysis, geospatial clustering, feature engineering, and predictive modeling.
+* `cutzamalaSystem/`: Analysis of reservoir storage in the Cutzamala System (2020–2024).
+* `parkBudget/`: Proposed budget allocation for parks in Mexico City.
+* `center/`: Determination of Mexico’s geographic center using different criteria.
 
 ---
 
-## Ejercicio 3: Centro de México
+## Airbnb Prices
 
-![Mapa generado de ubicaciones](assets/centro-mexico-mapa.png)
+![](assets/pricesAirbnb/interactive.gif)
 
-Se identifican y comparan tres localidades que afirman ser el centro de la República Mexicana: **Cañitas de Felipe Pescador** (Zacatecas), **Tequisquiapan** (Querétaro) y **Aguascalientes** (Aguascalientes). El análisis considera tres enfoques distintos: geográfico, simbólico e institucional.
+**Average Airbnb prices by top 10 neighbourhoods**
 
-* Se utiliza un script en Python que descarga y extrae automáticamente un shapefile del contorno mundial (Natural Earth), lo filtra por México y marca los tres puntos de interés.
-* El mapa resultante se genera y guarda como imagen PNG en la carpeta `assets/`.
-* Puede mostrarse en pantalla usando una opción adicional en la línea de comandos (`-s` / `--show`).
+![](assets/pricesAirbnb/price10barrios.png)
 
-### Código relevante
+**Price distributionin the city 95quantile**
 
-Ubicado en `center/generaMapa.py`. Uso recomendado:
+![](assets/pricesAirbnb/priceDistribution.png)
+
+**Boxplot of price by room type**
+
+![](assets/pricesAirbnb/roomType.png)
+
+**Price clusters on map**
+
+![](assets/pricesAirbnb/priceLugares.png)
+
+**Heatmap correlations**
+
+![](assets/pricesAirbnb/correlationFeatures.png)
+This project analyzes Airbnb listing prices in Mexico City, relating them to
+geographic location, proximity to amenities, and socio-economic indicators.
+
+**Dataset**: `airbnb_cdmx_2024_data.csv` located in `data/` folder, including
+features such as price, room type, neighbourhood, distances to services
+(supermarket, hospital, subway, park, university, restaurant), and
+socio-economic indices (income per month, average cost of living, demand index,
+security index).
+
+**Objectives**:
+
+- Perform exploratory data analysis to characterize price distribution across
+  neighbourhoods and room types.
+- Identify price clusters and hotspots using geographic clustering
+  (Folium/GeoPandas).
+- Engineer features (log-price, price categories, distances to points of
+  interest, socio-economic interactions).
+- Build and evaluate predictive models (lR,Ridge) to estimate listing prices.
+
+
+## How to run
 
 ```bash
-# Solo la primera vez: descarga y extrae el shapefile de Natural Earth
+# Install core dependencies
+pip install pandas numpy matplotlib folium geopandas scikit-learn xgboost branca
+
+# Install and register Jupyter kernel
+pip install --user ipykernel
+python3 -m ipykernel install --user --name datosCDMX --display-name "Python 3.13.3 (datosCDMX)"
+```
+```
+```
+
+## Interactive Map with Folium
+
+You can create an interactive hexbin-like map using Folium and your Catppuccin
+Mocha palette. This map shows average prices per grid cell and allows
+panning/zooming in the browser.
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+import folium
+from branca.colormap import LinearColormap
+
+# 1. Compute hexbin grid off-screen
+fig, ax = plt.subplots()
+hb = ax.hexbin(
+    df['longitude'], df['latitude'],
+    C=df['price'], gridsize=50,
+    reduce_C_function=np.mean,
+    mincnt=1
+)
+plt.close(fig)
+
+# 2. Extract centers and averages
+centers = hb.get_offsets()
+avgs    = hb.get_array()
+
+# 3. Build Folium map
+m = folium.Map(location=[19.43, -99.13], zoom_start=11, tiles='CartoDB positron')
+
+# 4. Create Catppuccin colormap
+colormap = LinearColormap(
+    colors=catppuccin_mocha,
+    vmin=avgs.min(),
+    vmax=avgs.max(),
+    caption='Avg Price (MXN)'
+)
+
+# 5. Plot hex proxies as circles
+hex_radius = 400  # meters
+for (lon, lat), avg in zip(centers, avgs):
+    folium.Circle(
+        location=(lat, lon),
+        radius=hex_radius,
+        fill=True,
+        fill_color=colormap(avg),
+        color=None,
+        fill_opacity=0.6,
+        weight=0
+    ).add_to(m)
+
+# 6. Add legend and display
+colormap.add_to(m)
+m
+```
+
+This approach leverages Matplotlib’s `hexbin` to compute bins and Folium’s `Circle` layers for an interactive map. Adjust `gridsize` and `hex_radius` to fine-tune visual density, and enjoy a fully interactive, Catppuccin-themed spatial analysis of Airbnb prices.
+
+
+### Usage
+
+You can alter the notebook in `/pricesAirbnb/` o ir al siguiente link en [Kaggle](https://www.kaggle.com/code/leonz9/airbnb-prices-cdmx-anal/edit).
+
+---
+
+## Cutzamala System
+
+![Comparative percentage chart 2018–2022](assets/comparativo_porcentajes_2018_2022.png)
+
+This analysis covers the absolute storage volume (in millions of m³) and fill percentage of the three main reservoirs in the Cutzamala System: **El Bosque**, **Valle de Bravo**, and **Villa Victoria**, using historical data from 2020 to 2024.
+
+* A Python script downloads and processes data directly from the CONAGUA FTP server.
+* Four plots are generated:
+
+  * Individual storage charts for each reservoir.
+  * A comparative fill-percentage chart for all three.
+* Figures are saved automatically to `assets/` and `cutzamalaSystem/figs/`.
+* Use the `-s` flag to display each plot on-screen.
+
+### Usage
+
+```bash
+# Download data from CONAGUA FTP
+python3 cutzamalaSystem/getDataFromSIH.py
+# Generate plots for a specific range
+default usage: last four available years
+python3 cutzamalaSystem/plot_cutzamala.py -i 2020 -f 2024 -s
+```
+
+* `-i, --inicio`: Start year (e.g., 2020).
+* `-f, --fin`: End year (e.g., 2024).
+* `-s, --show`: Display plots in addition to saving.
+
+---
+
+## Exercise 3: Geographic Center of Mexico
+
+![Map of the three candidate locations](assets/centro-mexico-mapa.png)
+
+We compare three sites claiming to be Mexico’s center: **Cañitas de Felipe Pescador** (Zacatecas), **Tequisquiapan** (Querétaro), and **Aguascalientes** (Aguascalientes). The analysis uses three different approaches: geographic, symbolic, and institutional.
+
+* A Python script downloads and filters the Natural Earth shapefile for Mexico, then plots the three points of interest.
+* The resulting map is saved as a PNG in `assets/`.
+* Use the `-s`/`--show` flag to display the map on-screen.
+
+### Usage
+
+```bash
+# First-time setup: download and prepare the shapefile
 python3 center/generaMapa.py --first-run
 
-# Generar el mapa y mostrarlo
+# Generate and display the map
 python3 center/generaMapa.py --show
 ```
 
-Este script acepta:
+* `--first-run`: Download and prepare the shapefile.
+* `-s, --show`: Display the map on-screen.
 
-* `--first-run`: Descarga y prepara el shapefile necesario para mapear México.
-* `-s` / `--show`: Muestra el mapa en pantalla además de guardarlo.
-* (sin argumentos): Genera el archivo PNG en silencio como salida final.
-
-### Visualización del resultado
-
-El mapa generado incluye:
-
-* **Tequisquiapan** (centro oficial designado en 1916).
-* **Cañitas de Felipe Pescador** (centro geográfico según INEGI).
-* **Aguascalientes** (centro simbólico señalado en la Exedra de la Plaza de la Patria).
-
-La figura se inserta automáticamente en el reporte final de Typst para ilustrar la comparación espacial entre las distintas interpretaciones del “centro” de México.
-
-## Ejercicio 4: Análisis de CURPs
-
-![Distribución por entidad](assets/fig_entidades.png)
-
-En esta sección se valida un conjunto de CURPs contenidos en el archivo `curp_sucio.txt`, se identifican cuántas son válidas y se analiza su distribución por entidad federativa y por fechas de cumpleaños (mes y día).
-
-* Se utiliza una expresión regular conforme a la estructura oficial publicada por RENAPO.
-* Se grafica la distribución de CURPs válidas por entidad.
-* Se identifican las fechas de cumpleaños (MM-DD) más frecuentes.
-* Se genera automáticamente un archivo `datos.typ` si se usa la opción `--typst`.
-
-### Código relevante
-
-Ubicado en `curp/curp_analysis.py`. Uso recomendado:
-
-```bash
-python3 curp/curp_analysis.py --typst
-```
-
-Este script acepta:
-
-* `--typst`: Genera `curp/datos.typ` con variables compatibles con Typst.
-* `-h` o `--help`: Muestra el texto de ayuda.
-
-## Referencias
-
-Referencias bibliográficas y fuentes de datos se encuentran en `assets/references.yml`. Son gestionadas con [`hayagriva`](https://typst.app/docs/reference/hayagriva/), compatible con CSL YAML y `.bib`.
+---
