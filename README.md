@@ -184,4 +184,4 @@ python3 center/generaMapa.py --show
 * `--first-run`: Download and prepare the shapefile.
 * `-s, --show`: Display the map on-screen.
 
----
+--- 

@@ -1,5 +1,9 @@
 Descripcion:
-Repositorio que analiza problemáticas ambientales, sociales y administrativas
-en México, con un enfoque en el uso de datos, validación estructural y análisis
-geoespacial.
+  Repositorio que analiza problemáticas ambientales, sociales y administrativas
+  en México, con un enfoque en el uso de datos, validación estructural y análisis
+  geoespacial.
+remotes:
+  - github
+  - gitlab
+  - tea1
 
